@@ -1,8 +1,8 @@
 {
-	"name": "cgcf-extension",
-	"displayName": "cgcf-extension",
+	"name": "cgcf",
+	"displayName": "cgcf",
 	"description": "copy git changes file",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"repository": {
