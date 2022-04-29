@@ -10,16 +10,11 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:cgcf.helloWorld",
 		"onCommand:cgcf.copyChanges"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "cgcf.helloWorld",
-				"title": "Hello World"
-			},
 			{
 				"command": "cgcf.copyChanges",
 				"title": "Copy Changes"
@@ -52,6 +47,6 @@
 		"@vscode/test-electron": "^2.1.3"
 	},
 	"dependencies": {
-		"cgcf": "^1.0.1"
+		"cgcf": "^1.0.2"
 	}
 }

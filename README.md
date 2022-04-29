@@ -1,65 +1,38 @@
-# cgcf-extension README
+# cgcf-extension 介绍
 
-This is the README for your extension "cgcf-extension". After writing up a brief description, we recommend including the following sections.
+这个拓展可以让你复制git项目中有改动的部分，包含文件和文件夹
 
-## Features
+This extension allows you to copy the part of the project that has been changed, including files and folders.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 特性
 
-For example if there is an image subfolder under your extension project workspace:
+复制git项目中改动的文件和文件夹 [✔]
 
-\!\[feature X\]\(images/feature-x.png\)
+支持windows [✔]
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 环境
 
-## Requirements
+Windows，Git 项目
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 如何使用
 
-## Extension Settings
+打开侧边栏Source Control, 右键点击更改的文件，选择Copy Changes
+或直接运行命令Copy Changes
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+状态栏中会提示复制的进度和结果，在成功后，会自动打开存储所有改动文件的临时文件夹
 
-For example:
+## 已知问题
 
-This extension contributes the following settings:
+只支持windows，其他环境没有测试
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+目前不能直接复制文件和文件夹到剪贴板，需要手动ctrl+a,ctrl+c复制到剪贴板，然后手动ctrl+v粘贴到目标位置
 
-## Known Issues
+## 更新日志
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### 0.0.1
 
-## Release Notes
+1. 支持windows，可在git项目中，打开git，右键点击copy changes来打开包含所有改动的文件和文件夹，或使用Copy Changes命令直接执行。每次执行都会重新复制。
 
-Users appreciate release notes as you update your extension.
+2. 关闭visual studio code后，自动清理临时文件夹
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+3. 状态栏显示进度

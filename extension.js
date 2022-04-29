@@ -15,53 +15,30 @@ const target_path = path.join(workspaceRoot,tmp);
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "cgcf" is now active!');
-	
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('cgcf.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from cgcf!');
-
-		// 获取当前路径
-		// 列出所有更改的文件
-		// 复制文件出来
-	});
-
 	let copyChanges = vscode.commands.registerCommand('cgcf.copyChanges', async function(){
-		// let editor = vscode.window.activeTextEditor;
-		// if (!editor) {
-		// 	vscode.window.showInformationMessage('No editor is active');
-		// 	return;
-		// }
-		// let document = editor.document;
-		// console.log(document);
-		// let text = document.getText();
-		// vscode.env.clipboard.writeText(text);
-		// vscode.window.showInformationMessage(workspaceRoot);
 		cgcf.clear(target_path);
+        // 提示正在读取拷贝文件
+		vscode.window.setStatusBarMessage('正在读取拷贝文件...');
         let res = await cgcf.getGitRepoChanges(workspaceRoot);
-        
+		// 无文件改动
+		if(res.length === 0){
+			vscode.window.showInformationMessage('no changes');
+			return ;
+		}
         let source_file = "", target_file = "";
+		vscode.window.setStatusBarMessage('正在拷贝文件...');
         for (let i in res) {
             source_file = path.resolve(workspaceRoot, res[i]);
             target_file= path.join(target_path, res[i]);
-            cgcf.log(`[${workspaceRoot}] copy [${Number(i)+1}]: ${source_file} to ${target_file}`);
             cgcf.copy(source_file, target_file);
         }
-        cgcf.log("total files:", res.length);
-        cgcf.log("target path:", target_path);
+		vscode.window.setStatusBarMessage(`拷贝成功！共${res.length}个项目`);
 		cgcf.openInExplorer(target_path);
+		setTimeout(()=>{
+			vscode.window.setStatusBarMessage(null);
+		},2000);
 	})
 
-	context.subscriptions.push(disposable);
 	context.subscriptions.push(copyChanges);
 }
 
