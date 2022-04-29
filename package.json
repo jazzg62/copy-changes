@@ -1,8 +1,8 @@
 {
-	"name": "cgcf",
-	"displayName": "cgcf",
+	"name": "CopyChanges",
+	"displayName": "Copy Changes",
 	"description": "copy git changes file",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"repository": {
@@ -16,14 +16,15 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:cgcf.copyChanges"
+		"onCommand:cc.copyChanges"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "cgcf.copyChanges",
-				"title": "Copy Changes"
+				"command": "cc.copyChanges",
+				"title": "Copy Changes",
+				"when": "scmProvider == git"
 			}
 		],
 		"menus": {
@@ -31,7 +32,7 @@
 				{
 					"when": "scmProvider == git",
 					"group": "navigation",
-					"command": "cgcf.copyChanges"
+					"command": "cc.copyChanges"
 				}
 			]
 		}
