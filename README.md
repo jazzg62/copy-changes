@@ -24,6 +24,7 @@ Windows，Git 项目
 ## 发布
 
 vsce package
+
 vsce publish
 
 ## 已知问题

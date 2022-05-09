@@ -16,27 +16,20 @@ const target_path = path.join(workspaceRoot,tmp);
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	let copyChanges = vscode.commands.registerCommand('cc.copyChanges', async function(){
+	let copyChanges = vscode.commands.registerCommand('cc.copyChanges', function(){
 		cgcf.clear(target_path);
-        // 提示正在读取拷贝文件
-		vscode.window.setStatusBarMessage('正在读取改动文件...');
-        let res = await cgcf.getGitRepoChanges(workspaceRoot);
-		// 无文件改动
+        let res = cgcf.getGitRepoChanges(workspaceRoot);
 		if(res.length === 0){
-			vscode.window.showInformationMessage('无文件改动！');
+			vscode.window.showWarningMessage('无文件改动！');
 			return ;
 		}
         let source_file = "", target_file = "";
-		vscode.window.setStatusBarMessage('正在拷贝文件...');
         for (let i in res) {
             source_file = path.resolve(workspaceRoot, res[i]);
             target_file= path.join(target_path, res[i]);
             cgcf.copy(source_file, target_file);
         }
-		vscode.window.setStatusBarMessage(`拷贝成功！共${res.length}个项目`);
-		setTimeout(()=>{
-			vscode.window.setStatusBarMessage(null);
-		},2000);
+		vscode.window.showInformationMessage(`拷贝成功！共${res.length}个项目`);
 		cgcf.openInExplorer(target_path);
 	})
 
