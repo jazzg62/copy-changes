@@ -4,9 +4,6 @@
 
 This extension allows you to copy the part of the project that has been changed, including files and folders.
 
-## 环境
-
-Windows，Git 项目
 
 ## 如何使用
 
