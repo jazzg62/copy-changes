@@ -4,12 +4,6 @@
 
 This extension allows you to copy the part of the project that has been changed, including files and folders.
 
-## 特性
-
-复制git项目中改动的文件和文件夹 [✔]
-
-支持windows [✔]
-
 ## 环境
 
 Windows，Git 项目
@@ -20,6 +14,12 @@ Windows，Git 项目
 或直接运行命令Copy Changes
 
 状态栏中会提示复制的进度和结果，在成功后，会自动打开存储所有改动文件的临时文件夹
+
+## 特性
+
+复制git项目中改动的文件和文件夹 [✔]
+
+支持windows [✔]
 
 ## 发布
 
