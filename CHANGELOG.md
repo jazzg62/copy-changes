@@ -1,9 +1,25 @@
-# Change Log
+# 更新日志(Change Log)
 
-All notable changes to the "cgcf-extension" extension will be documented in this file.
+## 0.0.6
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+1. 文档说明更新，添加演示demo
 
-## [Unreleased]
+## 0.0.5
 
-- Initial release
+1. 更新提示方式
+
+## 0.0.4
+
+1. 修复git changes文件过多会出错的问题
+
+## 0.0.3
+
+1. 修复临时文件夹可能无法清理的问题
+
+## 0.0.1
+
+1. 支持windows，可在git项目中，打开git，右键点击copy changes来打开包含所有改动的文件和文件夹，或使用Copy Changes命令直接执行。每次执行都会重新复制。
+
+2. 关闭visual studio code后，自动清理临时文件夹
+
+3. 状态栏显示进度
