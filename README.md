@@ -20,12 +20,6 @@ This extension allows you to copy the part of the project that has been changed,
 
 支持windows [✔]
 
-## 发布
-
-vsce package
-
-vsce publish
-
 ## 已知问题
 
 只支持windows，其他环境没有测试

@@ -2,7 +2,7 @@
 	"name": "CopyChanges",
 	"displayName": "Copy Changes",
 	"description": "copy git changes file",
-	"version": "0.0.9",
+	"version": "0.0.11",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"repository": {
@@ -40,7 +40,8 @@
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
+		"test": "node ./test/runTest.js",
+		"publish": "vsce package && vsce publish"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.66.0",
