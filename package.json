@@ -2,9 +2,10 @@
 	"name": "CopyChanges",
 	"displayName": "Copy Changes",
 	"description": "copy git changes file",
-	"version": "0.0.12",
+	"version": "0.0.14",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
+	"icon":"logo.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jazzg62/cgcf-extension"
