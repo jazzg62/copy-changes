@@ -2,7 +2,7 @@
 	"name": "CopyChanges",
 	"displayName": "Copy Changes",
 	"description": "copy git changes file",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"icon":"logo.png",
@@ -56,6 +56,6 @@
 		"typescript": "^4.5.5"
 	},
 	"dependencies": {
-		"cgcf": "^1.0.7"
+		"cgcf": "^1.0.8"
 	}
 }

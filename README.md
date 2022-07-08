@@ -24,6 +24,9 @@ This extension allows you to copy the part of the project that has been changed,
 
 ## 已知问题
 
-目前仅支持windows，其他环境未做测试
+目前仅支持windows，其他环境未做测试！！！
 
-文件名出现中文时，会出现失败的情况。需要保证更改的文件名不能含有中文
+如复制文件出现错误，可检查改动的文件或文件夹中是否出现中文，如出现中文，可尝试运行以下命令修复。
+```bash
+git config --global core.quotepath false
+```

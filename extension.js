@@ -29,8 +29,10 @@ function activate(context) {
             target_file= path.join(target_path, res[i]);
             cgcf.copy(source_file, target_file);
         }
-		vscode.window.showInformationMessage(`拷贝成功！共${res.length}个项目`);
-		cgcf.openInExplorer(target_path);
+		if(cgcf.openInExplorer(target_path))
+			vscode.window.showInformationMessage(`拷贝成功！共${res.length}个项目`);
+		else
+			vscode.window.showInformationMessage(`拷贝出错！`);
 	})
 
 	context.subscriptions.push(copyChanges);
