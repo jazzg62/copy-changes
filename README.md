@@ -6,7 +6,7 @@ This extension allows you to copy the part of the project that has been changed,
 
 ## 如何使用
 
-![demo](https://jazzg62.github.io/cgcf-extension/demo.gif)
+![demo](./docs/demo.gif)
 
 打开侧边栏 Source Control, 右键点击更改的文件，选择 Copy Changes
 或直接运行命令 Copy Changes
@@ -21,10 +21,14 @@ This extension allows you to copy the part of the project that has been changed,
 
 ## 已知问题
 
-目前仅支持 windows，其他环境未做测试！！！
+目前仅支持 windows
 
 改动的文件名中含有中文的，可能会出现复制失败的情况，可尝试运行以下命令修复。
 
 ```bash
 git config --global core.quotepath false
 ```
+
+## 问题反馈与建议
+
+[提交 ISSUE](https://github.com/jazzg62/cgcf-extension/issues/new)
