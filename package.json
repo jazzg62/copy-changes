@@ -2,7 +2,7 @@
 	"name": "CopyChanges",
 	"displayName": "Copy Changes",
 	"description": "copy git changes file",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"icon":"logo.png",
