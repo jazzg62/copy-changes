@@ -48,7 +48,8 @@ function activate(context) {
 		let source_file = "", target_file = "";
 		let count = 0;
         for (let item of changes) {
-			source_file = item['_resourceUri']['_fsPath'];
+			if(!item) continue;
+			source_file = item['resourceUri']['_fsPath'];
 			// 文件不存在时，忽略
 			if(!fs.existsSync(source_file)) continue;
 			target_file = source_file.replace(workspaceRoot, target_path);

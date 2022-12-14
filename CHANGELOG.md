@@ -1,5 +1,9 @@
 # 更新日志(Change Log)
 
+## 0.1.5
+
+- 修复copy selected changes 无法生效的问题
+
 ## 0.1.0
 
 - 支持选择部分改动复制
