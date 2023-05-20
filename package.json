@@ -2,7 +2,7 @@
 	"name": "CopyChanges",
 	"displayName": "Copy Changes",
 	"description": "copy git changes file",
-	"version": "0.1.7",
+	"version": "0.2.0",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"icon": "logo.png",
@@ -20,7 +20,7 @@
 		"onCommand:cc.copyChanges",
 		"onCommand:cc.copySelectedChanges"
 	],
-	"main": "./extension.js",
+	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
@@ -50,6 +50,7 @@
 		}
 	},
 	"scripts": {
+		"build": "tsc",
 		"lint": "eslint .",
 		"pretest": "npm run lint",
 		"test": "node ./test/runTest.js",
@@ -65,8 +66,5 @@
 		"glob": "^7.2.0",
 		"mocha": "^9.2.2",
 		"typescript": "^4.5.5"
-	},
-	"dependencies": {
-		"cgcf": "^1.1.2"
 	}
 }
