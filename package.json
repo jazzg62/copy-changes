@@ -1,8 +1,8 @@
 {
-	"name": "CopyChanges",
-	"displayName": "Copy Changes",
-	"description": "copy git changes file",
-	"version": "0.2.2",
+	"name": "GitChanges",
+	"displayName": "Git Changes",
+	"description": "show git changes file",
+	"version": "0.3.0",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"icon": "logo.png",
@@ -17,32 +17,32 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:cc.copyChanges",
-		"onCommand:cc.copySelectedChanges"
+		"onCommand:cc.showChanges",
+		"onCommand:cc.showSelectedChanges"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "cc.copyChanges",
-				"title": "Copy Changes",
+				"command": "cc.showChanges",
+				"title": "Show Changes",
 				"when": "scmProvider == git"
 			},
 			{
-				"command": "cc.copySelectedChanges",
-				"title": "Copy Select Changes",
+				"command": "cc.showSelectedChanges",
+				"title": "Show Select Changes",
 				"when": "scmProvider == git"
 			}
 		],
 		"menus": {
 			"scm/resourceState/context": [
 				{
-					"command": "cc.copyChanges",
+					"command": "cc.showChanges",
 					"group": "navigation",
 					"when": "scmProvider == git"
 				},
 				{
-					"command": "cc.copySelectedChanges",
+					"command": "cc.showSelectedChanges",
 					"group": "navigation",
 					"when": "scmProvider == git"
 				}

@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import vscode from 'vscode';
-import * as cgcf from './cgcf';
+import * as utils from './utils';
 import path from 'path';
 import fs from 'fs';
 
@@ -17,10 +17,10 @@ const target_path = path.join(workspaceRoot,tmp);
  * @param {vscode.ExtensionContext} context
  */
 function activate(context:vscode.ExtensionContext) {
-	let copyChanges = vscode.commands.registerCommand('cc.copyChanges', function(){
+	let showChanges = vscode.commands.registerCommand('cc.showChanges', function(){
 		console.log(target_path)
-		cgcf.clear(target_path);
-        let changes = cgcf.getGitRepoChanges(workspaceRoot);
+		utils.clear(target_path);
+        let changes = utils.getGitRepoChanges(workspaceRoot);
 		console.log(changes);
 		if(changes.length === 0){
 			vscode.window.showWarningMessage('无文件改动！');
@@ -32,16 +32,16 @@ function activate(context:vscode.ExtensionContext) {
             source_file = path.resolve(workspaceRoot, item);
             target_file= path.join(target_path, item);
 			count++;
-            cgcf.copy(source_file, target_file);
+            utils.copy(source_file, target_file);
         }
-		if(cgcf.openInExplorer(target_path))
-			vscode.window.showInformationMessage(`拷贝成功！共${count}个项目`);
+		if(utils.openInExplorer(target_path))
+			vscode.window.showInformationMessage(`成功！共${count}个项目`);
 		else
-			vscode.window.showInformationMessage(`拷贝出错！`);
+			vscode.window.showInformationMessage(`出现错误！`);
 	})
 
-	let copySelectChanges= vscode.commands.registerCommand('cc.copySelectedChanges', function(){
-		cgcf.clear(target_path);
+	let showSelectChanges= vscode.commands.registerCommand('cc.showSelectedChanges', function(){
+		utils.clear(target_path);
 		let changes = arguments;
 		if(changes.length === 0){
 			vscode.window.showWarningMessage('无文件改动！');
@@ -56,26 +56,26 @@ function activate(context:vscode.ExtensionContext) {
 			if(!fs.existsSync(source_file)) continue;
 			target_file = source_file.replace(workspaceRoot, target_path);
 			count++;
-			cgcf.copy(source_file, target_file);
+			utils.copy(source_file, target_file);
         }
 		if(count == 0){
 			vscode.window.showWarningMessage('无新增或修改的文件！');
 			return ;
 		}
-		if(cgcf.openInExplorer(target_path))
-			vscode.window.showInformationMessage(`拷贝成功！共${count}个项目`);
+		if(utils.openInExplorer(target_path))
+			vscode.window.showInformationMessage(`成功！共${count}个项目`);
 		else
-			vscode.window.showInformationMessage(`拷贝出错！`);
+			vscode.window.showInformationMessage(`出现错误！`);
 	})
 
-	context.subscriptions.push(copyChanges);
-	context.subscriptions.push(copySelectChanges);
+	context.subscriptions.push(showChanges);
+	context.subscriptions.push(showSelectChanges);
 }
 
 // this method is called when your extension is deactivated
 function deactivate() {
 	if(fs.existsSync(target_path))
-		cgcf.clear(target_path);
+		utils.clear(target_path);
 }
 
 module.exports = {
