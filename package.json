@@ -2,7 +2,7 @@
 	"name": "GitChanges",
 	"displayName": "Git Changes",
 	"description": "show git changes file",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"icon": "logo.png",
