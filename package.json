@@ -1,8 +1,8 @@
 {
 	"name": "GitChanges",
 	"displayName": "Git Changes",
-	"description": "show git changes file",
-	"version": "0.3.1",
+	"description": "Show changed files in git",
+	"version": "0.4.0",
 	"author": "https://github.com/jazzg62",
 	"publisher": "jazzg62",
 	"icon": "logo.png",
